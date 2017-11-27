@@ -1,21 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom'
 import Root from './containers/Root';
-import { Provider } from 'react-redux'
-import thunk from 'redux-thunk'
-import { createLogger } from 'redux-logger'
+import { render } from 'react-dom'
+import configureStore from './store/configureStore'
 
-const middleware = [ thunk ]
-middleware.push(createLogger())
-
-const store = createStore(
-  reducer,
-  applyMiddleware(...middleware)
-)
+const store = configureStore()
 
 render(
-  <Provider store={store}>
-    <App />
-  </Provider>
-  document.getElementById('root');
+  <Router>
+    <Root store={store} />
+  </Router>,
+  document.getElementById('root')
 )

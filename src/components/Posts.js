@@ -16,4 +16,4 @@ Posts.propTypes = {
   posts: PropTypes.array.isRequired
 }
 
-export default Home
+export default Posts
