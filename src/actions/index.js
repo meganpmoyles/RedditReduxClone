@@ -5,7 +5,6 @@ export const RECEIVED_POSTS = 'RECEIVE_POSTS'
 function requestPosts(subreddit) {
   return {
     type: REQUEST_POSTS,
-    subreddit
   }
 }
 
