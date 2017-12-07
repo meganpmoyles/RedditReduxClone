@@ -1,0 +1,6 @@
+net, cloud, l
+
+1 example:
+l.cloud_nodes.terminated was false.
+
+Some of these launched services don't have terminated cloud nodes.
