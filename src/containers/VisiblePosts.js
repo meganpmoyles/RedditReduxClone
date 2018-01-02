@@ -9,12 +9,14 @@ class VisiblePostList extends Component {
           fetchPosts("all");
         }
 
-        render(){
+        render() {
           const { posts } = this.props;
           return (
-            <PostList
-              posts={posts}
-            />
+            <div>
+              <PostList
+                  posts={posts}
+              />
+            </div>
           );
         }
 }

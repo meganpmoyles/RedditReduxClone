@@ -12,10 +12,9 @@ const rootReducer = combineReducers({
 })
 
 export const getVisiblePosts = (state, filter) => {
-        var filteredListSlice = listByFilter[filter];
+        var filteredListSlice = state.listByFilter[filter];
         var postIds = fromList.getPostIds(filteredListSlice);
 
-        console.log(postIds);
         var collectedPosts = postIds.map(id => {
           fromById.getPostById(state.postsById, id)
         });
