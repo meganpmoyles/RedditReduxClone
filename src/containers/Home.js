@@ -1,16 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import * as API from '../middleware/api.js'
-
-API.getAllPosts().then(function(result) {
-  console.log(result);
-});
-
+import VisiblePostList from './VisiblePosts.js'
 const Home = () => (
   <ul>
-    <li>
-      Home
-    </li>
+    <VisiblePostList/>
   </ul>
 )
 
