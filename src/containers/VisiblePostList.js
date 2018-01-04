@@ -1,12 +1,16 @@
 import React, { Component} from 'react'
 import { connect } from 'react-redux'
-import { fetchPosts } from '../actions'
+import * as actions from '../actions'
 import PostList from '../components/PostList.js'
 import { getVisiblePosts } from '../reducers/index.js'
 
 class VisiblePostList extends Component {
         componentDidMount(){
-          fetchPosts("all");
+          console.log("componentDidMount");
+          console.log(fetchPosts);
+          console.log(typeof(fetchPosts));
+          const { fetchPosts } = this.props;
+          var retVal = fetchPosts("all");
         }
 
         render() {
@@ -27,11 +31,5 @@ const mapStateToProps = state => {
   }
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    onClick: null
-  }
-};
-
-VisiblePostList = connect(mapStateToProps, mapDispatchToProps)(PostList);
+VisiblePostList = connect(mapStateToProps, actions)(VisiblePostList);
 export default VisiblePostList;

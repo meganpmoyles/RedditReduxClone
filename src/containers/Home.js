@@ -1,10 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import * as API from '../middleware/api.js'
-import VisiblePostList from './VisiblePosts.js'
+import VisiblePostList from './VisiblePostList.js'
 const Home = () => (
   <ul>
-    "Post List"
     <VisiblePostList/>
   </ul>
 )
