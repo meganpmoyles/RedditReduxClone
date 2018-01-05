@@ -6,11 +6,8 @@ import { getVisiblePosts } from '../reducers/index.js'
 
 class VisiblePostList extends Component {
         componentDidMount(){
-          console.log("componentDidMount");
-          console.log(fetchPosts);
-          console.log(typeof(fetchPosts));
           const { fetchPosts } = this.props;
-          var retVal = fetchPosts("all");
+          fetchPosts("all");
         }
 
         render() {

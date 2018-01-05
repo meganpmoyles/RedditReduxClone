@@ -5,7 +5,10 @@ const header = { headers: { 'Authorization': API_ID }}
 
 export const getAllPosts = () =>
          fetch(`${serverUrl}/posts`, header).
-         then(res => res.json())
+         then(function(res) {
+           var retVal = res.json();
+           return retVal;
+         })
 
 export const getPostById = (id) =>
   fetch(`${serverUrl}/posts/${id}`, header).

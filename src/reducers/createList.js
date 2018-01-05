@@ -5,7 +5,7 @@ const createPostList = (filter) => {
     switch(action.type){
       case 'FETCH_POSTS_SUCCESS':
         if(filter == action.filter) {
-          var newState = action.response.map(post => post.id);
+          var newState = action.result.map(post => post.id);
           return newState;
         }
         return state;
