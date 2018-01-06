@@ -1,15 +1,11 @@
-import fetch from 'cross-fetch'
-export const REQUEST_POSTS = 'REQUEST_POSTS'
-export const RECEIVED_POSTS = 'RECEIVE_POSTS'
+import * as Api from '../middleware/api.js'
 
-function requestPosts(subreddit) {
-  return {
-    type: REQUEST_POSTS,
-  }
-}
-
-function receivePosts(subreddit, json) {
-  return {
-    type: RECEIVE_POSTS,
-  }
-}
+export const fetchPosts = (filter) => (dispatch) => {
+  return Api.getAllPosts().then(function(result) {
+          dispatch({
+            type: 'FETCH_POSTS_SUCCESS',
+            filter,
+            result
+          });
+  });
+};
