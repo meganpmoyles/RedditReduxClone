@@ -16,7 +16,7 @@ export const getVisiblePosts = (state, filter) => {
         let postIds = fromList.getPostIds(filteredListSlice);
 
         let collectedPosts = postIds.map(id => {
-          getPostById(state.postsById, id)
+          return getPostById(state.postsById, id);
         });
         return collectedPosts;
 }
