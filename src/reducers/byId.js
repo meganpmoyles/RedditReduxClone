@@ -1,5 +1,5 @@
 export const postsById = (state=[], action) => {
-  switch(action) {
+  switch(action.type) {
     case 'FETCH_POSTS_SUCCESS':
         const nextState = { ...state };
         // Determine if stuff needs to be removed from the state dictionary
