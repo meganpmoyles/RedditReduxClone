@@ -18,12 +18,23 @@ export const getAllCategories = () =>
          fetch(`${serverUrl}/categories`, header).
          then(res => res.json())
 
-export const createPost = (id, timestamp, title, body, author, category) =>
-  fetch(`${serverUrl}/posts`, header, {
-        method: 'PUT',
-        body: JSON.stringify({ id, timestamp, title, body, author, category })
-        }).then(res => res.json())
+export const createPost = (id, timestamp, title, body, author, category) => {
+  var boder = JSON.stringify({ id, timestamp, title, body, author, category });
 
+  var myHeaders = new Headers();
+  myHeaders = {
+    "Authorization": API_ID,
+    "Content-Type": "application/json"
+  }
+
+  fetch(`${serverUrl}/posts`, {
+        headers: myHeaders,
+        method: 'POST',
+        body: boder
+        }).then(function(res) {
+          return res.json();
+        })
+}
 /*
  module.exports = {
   getPostById,
