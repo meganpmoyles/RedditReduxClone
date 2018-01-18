@@ -35,17 +35,3 @@ export const createPost = (id, timestamp, title, body, author, category) => {
           return res.json();
         })
 }
-/*
- module.exports = {
-  getPostById,
-  getAllPosts,
-  getAllCategories,
-  createPost
-}
-createPost('34', Date.now(), "first_post", "value", "autore", "redux").then(
-        function(response){
-          console.log(response);
-        }
-);
-*/
-

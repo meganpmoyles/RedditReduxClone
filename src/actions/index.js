@@ -11,15 +11,13 @@ export const fetchPosts = (filter) => (dispatch) => {
   });
 };
 
-export const addPost = (post) => (dispatch) => {
-  return;
-  /*return Api.createPost(id, timestamp, title, body, author, category).then(function(result) {
+export const addPost = (filter, id, timestamp, title, body, author, category) => (dispatch) => {
+  return Api.createPost(id, timestamp, title, body, author, category).then(function(result) {
           dispatch({
             type: 'ADD_POST',
             filter,
             result
           });
   });
-  */
 };
 

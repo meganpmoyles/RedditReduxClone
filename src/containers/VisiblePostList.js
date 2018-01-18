@@ -11,11 +11,7 @@ class VisiblePostList extends Component {
           const { fetchPosts, addPost } = this.props;
           var val = uuid();
           var time = Date.now();
-
-          console.log(time);
-          console.log(val);
-
-          createPost(val, Date.now(), "boi", "There's levels to this s***", "Meek Mill", "redux");
+          fetchPosts();
         }
 
         render() {
