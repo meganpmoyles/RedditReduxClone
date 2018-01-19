@@ -4,13 +4,10 @@ import * as actions from '../actions'
 import PostList from '../components/PostList.js'
 import { getVisiblePosts } from '../reducers/index.js'
 import {createPost}  from '../middleware/api.js'
-const uuid = require('uuid')
 
 class VisiblePostList extends Component {
         componentDidMount(){
           const { fetchPosts, addPost } = this.props;
-          var val = uuid();
-          var time = Date.now();
           fetchPosts();
         }
 

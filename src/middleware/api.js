@@ -18,8 +18,8 @@ export const getAllCategories = () =>
          fetch(`${serverUrl}/categories`, header).
          then(res => res.json())
 
-export const createPost = (id, timestamp, title, body, author, category) => {
-  var boder = JSON.stringify({ id, timestamp, title, body, author, category });
+export const createPost = (id, timestamp, postBody) => {
+  var boder = JSON.stringify({ id, timestamp, postBody });
 
   var myHeaders = new Headers();
   myHeaders = {
