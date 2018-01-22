@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import * as actions from '../actions'
-class AddPost extends Component {
+import { addPost }  from '../actions/index.js'
 
-        constructor(props) {
+class AddPost extends Component {
+        constructor(){
           super();
           this.handleSubmit = this.handleSubmit.bind(this);
         }
@@ -11,7 +11,7 @@ class AddPost extends Component {
         handleSubmit(event) {
           event.preventDefault();
           const data = new FormData(event.target);
-          addPost(data);
+          this.props.addPost(data, "all");
         }
 
         render() {
@@ -29,7 +29,6 @@ class AddPost extends Component {
             </form>
           );
         }
-}
+};
 
-AddPost = connect(actions)(AddPost);
-export default addPost;
+export default connect(null, {addPost})(AddPost);

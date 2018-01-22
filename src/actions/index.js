@@ -11,11 +11,11 @@ export const fetchPosts = (filter) => (dispatch) => {
   });
 };
 
-export const addPost = (postBody) => (dispatch) => {
+export const addPost = (postBody, filter) => (dispatch) => {
   var id = uuid();
   var time = Date.now();
 
-  return Api.createPost(id, time, postBody).function(result) {
+  return Api.createPost(id, time, postBody).then(function(result) {
           dispatch({
             type: 'ADD_POST',
             filter,

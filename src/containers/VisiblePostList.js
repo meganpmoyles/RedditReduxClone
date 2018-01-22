@@ -2,6 +2,7 @@ import React, { Component} from 'react'
 import { connect } from 'react-redux'
 import * as actions from '../actions'
 import PostList from '../components/PostList.js'
+import AddPost from '../containers/AddPost.js'
 import { getVisiblePosts } from '../reducers/index.js'
 import {createPost}  from '../middleware/api.js'
 
