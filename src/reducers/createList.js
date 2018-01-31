@@ -2,22 +2,18 @@ import { combineReducers } from 'redux'
 
 const createPostList = (filter) => {
   const ids = (state=[], action) => {
-    switch(action.type){
-      case 'ADD_POSTS_SUCCESS':
-        if(filter == action.filter) {
-          //Fetch existing id
-          let newState = state;
-          state.concat(action.result.id);
-          //Get new state
-        }
-        return state;
+    switch(action.type) {
+      case 'ADD_POSTS':
+          let newState = [
+             ...state,
+             action.result.id
+          ]
+          return newState;
         break;
       case 'FETCH_POSTS_SUCCESS':
-        if(filter == action.filter) {
+        //fix filtering
           var newState = action.result.map(post => post.id);
           return newState;
-        }
-        return state;
       break;
       default:
         return state;

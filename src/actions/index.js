@@ -17,7 +17,7 @@ export const addPost = (postBody, filter) => (dispatch) => {
 
   return Api.createPost(id, time, postBody).then(function(result) {
           dispatch({
-            type: 'ADD_POST',
+            type: 'ADD_POSTS',
             filter,
             result
           });

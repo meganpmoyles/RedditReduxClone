@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Post = ({id, title, onPostClick}) => (
-   <div key={id} onClick={onPostClick}>
+const Post = ({id, title}) => (
+   <div key={id}>
      {title}
    </div>
 );

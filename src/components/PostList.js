@@ -9,7 +9,6 @@ const PostList = ({posts, onPostClick}) => (
             <Post
                   id={post.id}
                   title={post.title}
-                  onPostClick={() => this.changeVote(post.id)}
             />)
      }
   </div>
