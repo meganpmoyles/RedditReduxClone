@@ -1,11 +1,8 @@
 export const postsById = (state=[], action) => {
   switch(action.type) {
     case 'REMOVE_POSTS':
-        var newState = { ...state };
-        var index = newState.indexOf(action.result.id);
-        if(index > -1){
-          newState.splice(index, 1);
-        }
+        let newState= Object.assign({}, state);
+        delete newState[action.id];
         return newState;
     case 'ADD_POSTS':
         var newState = { ...state };
