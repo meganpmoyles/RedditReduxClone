@@ -10,6 +10,15 @@ const createPostList = (filter) => {
           ]
           return newState;
         break;
+      case 'REMOVE_POSTS':
+        var index = state.indexOf(action.id);
+        var newState = { ...state };
+
+        if (index != -1){
+          newState.splice(index, 1);
+        }
+        return newState;
+        break;
       case 'FETCH_POSTS_SUCCESS':
         //fix filtering
           var newState = action.result.map(post => post.id);

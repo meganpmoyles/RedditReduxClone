@@ -23,8 +23,9 @@ export const addPost = (postBody, filter) => (dispatch) => {
           });
   });
 };
-export const removePost = (id) => (dispatch) => {
 
+export const removePost = (id) => (dispatch) => {
+  console.log("REMOVE POST");
   return Api.deletePost(id).then(function(result) {
           dispatch({
             type: 'REMOVE_POSTS',
