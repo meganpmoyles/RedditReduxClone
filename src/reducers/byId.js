@@ -1,7 +1,10 @@
 export const postsById = (state=[], action) => {
   switch(action.type) {
+    case 'REMOVE_POSTS':
+        var newState = state.filter(e => e.id !== action.result.id);
+        return newState;
     case 'ADD_POSTS':
-        let newState = { ...state };
+        var newState = { ...state };
         newState[action.result.id] = action.result;
         return newState;
     case 'FETCH_POSTS_SUCCESS':

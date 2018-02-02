@@ -23,4 +23,14 @@ export const addPost = (postBody, filter) => (dispatch) => {
           });
   });
 };
+export const removePost = (id) => (dispatch) => {
+
+  return Api.deletePost(id).then(function(result) {
+          dispatch({
+            type: 'REMOVE_POSTS',
+            result
+          });
+  });
+};
+
 
