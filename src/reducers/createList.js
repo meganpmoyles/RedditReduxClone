@@ -11,12 +11,14 @@ const createPostList = (filter) => {
           return newState;
         break;
       case 'REMOVE_POSTS':
-        var index = state.indexOf(action.id);
-        var newState = { ...state };
-
+        var index = state.indexOf(action.result.id);
+        console.log("state before " + state);
+        var newState = state.slice();
+        console.log("state after " + newState);
         if (index != -1){
           newState.splice(index, 1);
         }
+        console.log("state after again" + newState);
         return newState;
         break;
       case 'FETCH_POSTS_SUCCESS':
