@@ -12,6 +12,7 @@ class AddPost extends Component {
           event.preventDefault();
           const data = this.state;
           this.props.addPost(data, "all");
+          document.getElementById("create-comment").reset();
         }
 
         handleChange = (e) => {
@@ -20,7 +21,9 @@ class AddPost extends Component {
 
         render() {
           return (
-            <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
+            <form
+                id="create-comment"
+                onChange={this.handleChange} onSubmit={this.handleSubmit}>
               <label htmlFor="title">Title</label>
               <input id="title" name="title" type="text"  onChange={this.handleChange} />
               <label htmlFor="body">Post</label>
