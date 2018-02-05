@@ -9,6 +9,7 @@ const PostList = ({posts, onPostClick}) => (
             <Post
                   id={post.id}
                   title={post.title}
+                  voteScore={post.voteScore}
             />)
      }
   </div>

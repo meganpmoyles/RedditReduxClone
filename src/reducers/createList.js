@@ -19,7 +19,6 @@ const createPostList = (filter) => {
         return newState;
         break;
       case 'FETCH_POSTS_SUCCESS':
-        //fix filtering
           var newState = action.result.map(post => post.id);
           return newState;
       break;

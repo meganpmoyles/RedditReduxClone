@@ -11,11 +11,12 @@ class Post extends Component {
   }
 
   render() {
-   const { id, title } = this.props;
+   const { id, title, voteScore } = this.props;
    return (
            <div id="wrapper">
               <div id="left" key={id}>
-                {title}
+                <li>{title}</li>
+                <li>{voteScore}</li>
               </div>
               <div id="right">
                 <button onClick={(e) => this.eventHandler(e)}>X</button>

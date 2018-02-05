@@ -7,6 +7,7 @@ export const getAllPosts = () =>
          fetch(`${serverUrl}/posts`, header).
          then(function(res) {
            var retVal = res.json();
+           console.log(retVal);
            return retVal;
          })
 
