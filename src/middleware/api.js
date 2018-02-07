@@ -19,6 +19,24 @@ export const getAllCategories = () =>
          fetch(`${serverUrl}/categories`, header).
          then(res => res.json())
 
+export const vote = (id, voteString) => {
+  var tempBody = JSON.stringify({ voteString });
+
+  var myHeaders = new Headers();
+  myHeaders = {
+    "Authorization": API_ID,
+    "Content-Type": "application/json"
+  }
+
+  return fetch(`${serverUrl}/posts/${id}`, {
+        headers: myHeaders,
+        method: 'POST',
+        body: tempBody
+        }).then(function(res) {
+          return res.json();
+        });
+}
+
 export const deletePost = (id) => {
   var myHeaders = new Headers();
   myHeaders = {

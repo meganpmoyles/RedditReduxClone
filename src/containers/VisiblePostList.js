@@ -8,9 +8,10 @@ import {createPost}  from '../middleware/api.js'
 
 class VisiblePostList extends Component {
         componentDidMount(){
-          const { fetchPosts, addPost } = this.props;
+          const { fetchPosts, addPost, votePost } = this.props;
           fetchPosts();
         }
+
 
         render() {
           const { posts } = this.props;

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { removePost } from '../actions/index.js'
+import Voter from './Voter.js'
 
 class Post extends Component {
 
@@ -16,7 +17,7 @@ class Post extends Component {
            <div id="wrapper">
               <div id="left" key={id}>
                 <li>{title}</li>
-                <li>{voteScore}</li>
+                <Voter id={id} voteScore={voteScore} />
               </div>
               <div id="right">
                 <button onClick={(e) => this.eventHandler(e)}>X</button>

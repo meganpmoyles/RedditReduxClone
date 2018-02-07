@@ -1,7 +1,11 @@
 export const postsById = (state=[], action) => {
   switch(action.type) {
+    case 'CHANGE_POST_CONTENT':
+        var newState = Object.assign({}, state);
+        newState[action.result.id] = action.result;
+        return newState;
     case 'REMOVE_POSTS':
-        let newState= Object.assign({}, state);
+        var newState= Object.assign({}, state);
         delete newState[action.result.id];
         return newState;
     case 'ADD_POSTS':

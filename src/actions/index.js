@@ -24,8 +24,16 @@ export const addPost = (postBody, filter) => (dispatch) => {
   });
 };
 
+export const votePost = (id) => (dispatch) => {
+  // Right now, just delete the post to test the clicking
+  return Api.vote(id).then(function(result) {
+          dispatch({
+            type: 'CHANGE_POST_CONTENT',
+            result
+          });
+  });
+};
 export const removePost = (id) => (dispatch) => {
-  console.log("REMOVE POST");
   return Api.deletePost(id).then(function(result) {
           dispatch({
             type: 'REMOVE_POSTS',

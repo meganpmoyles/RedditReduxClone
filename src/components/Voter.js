@@ -3,32 +3,32 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { votePost } from '../actions/index.js'
 
-class Voter extends Component {
+class Voter extends React.Component {
         constructor(){
           super();
           this.downvote= this.downvote.bind(this);
           this.upvote = this.upvote.bind(this);
         }
 
-        downvote(){
-                this.vote(id, "down");
+        downvote(e){
+                votePost(this.id, "down");
         }
 
-        upvote(){
-                this.vote(id, "up");
+        upvote(e){
+                votePost(this.id, "up");
         }
 
         render() {
-          const { id, vote } = this.props;
+          const { id, voteScore } = this.props;
           return (
             <div>
-                <button onClick=>^</button>
-                <div>{vote}</div>
-                <button onClick=>V</button>
+                <button onClick={this.upvote}>UpVote</button>
+                <div>{voteScore}</div>
+                <button onClick={this.downvote}>DownVote</button>
             </div>
           )
         };
 };
 
-export default connect(null, {votePost})(Post);
+export default connect(null, {votePost})(Voter);
 
