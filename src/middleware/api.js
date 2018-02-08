@@ -7,7 +7,6 @@ export const getAllPosts = () =>
          fetch(`${serverUrl}/posts`, header).
          then(function(res) {
            var retVal = res.json();
-           console.log(retVal);
            return retVal;
          })
 
@@ -20,7 +19,8 @@ export const getAllCategories = () =>
          then(res => res.json())
 
 export const vote = (id, voteString) => {
-  var tempBody = JSON.stringify({ voteString });
+
+  var option = voteString;
 
   var myHeaders = new Headers();
   myHeaders = {
@@ -28,6 +28,7 @@ export const vote = (id, voteString) => {
     "Content-Type": "application/json"
   }
 
+  var tempBody = JSON.stringify( { option });
   return fetch(`${serverUrl}/posts/${id}`, {
         headers: myHeaders,
         method: 'POST',

@@ -11,11 +11,11 @@ class Voter extends React.Component {
         }
 
         downvote(e){
-                this.props.votePost(this.props.id, "down");
+                this.props.votePost(this.props.id, "downVote");
         }
 
         upvote(e){
-                this.props.votePost(this.props.id, "up");
+                this.props.votePost(this.props.id, "upVote");
         }
 
         render() {
