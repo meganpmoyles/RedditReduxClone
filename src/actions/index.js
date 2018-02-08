@@ -24,9 +24,9 @@ export const addPost = (postBody, filter) => (dispatch) => {
   });
 };
 
-export const votePost = (id) => (dispatch) => {
+export const votePost = (id, voteStr) => (dispatch) => {
   // Right now, just delete the post to test the clicking
-  return Api.vote(id).then(function(result) {
+  return Api.vote(id, voteStr).then(function(result) {
           dispatch({
             type: 'CHANGE_POST_CONTENT',
             result
