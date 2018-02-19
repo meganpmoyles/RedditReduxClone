@@ -2,7 +2,16 @@ import * as Api from '../middleware/api.js'
 const uuid = require('uuid')
 
 export const fetchPosts = (filter) => (dispatch) => {
-  return Api.getAllPosts().then(function(result) {
+  if(filter == "all"){
+    return Api.getAllPosts(filter).then(function(result) {
+          dispatch({
+            type: 'FETCH_POSTS_SUCCESS',
+            filter,
+            result
+          });
+    });
+  }
+  return Api.getCategoryPosts(filter).then(function(result) {
           dispatch({
             type: 'FETCH_POSTS_SUCCESS',
             filter,

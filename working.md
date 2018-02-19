@@ -1,9 +1,23 @@
+Step 0: Add React router scaffolding
+          -React Router for home
+          -React Router for categories
+                -Param routing?
+
+Step 1: Add category page
+Step 2: Display category as a prop on page
+
+Step 1: Display current route using withRouter
+
 Add categories
-        Fetch Categories: Change to API
         Add to state, combined categories
-        If current filter == all,
+        For home page
                 display categories?
                 Set filter using withRouter
+        For category page,
+                Do not
+        Move AddPage to VisiblePostList
+                Pass filter as prop to AddPage
+
 Add routes
 
         Get current route using withRouter

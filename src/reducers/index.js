@@ -2,6 +2,8 @@ import { combineReducers } from 'redux'
 import  { postsById, getPostById } from './byId.js'
 import createPostList, * as fromList from './createList.js'
 
+// Get categories first
+// Use those to create filtered lists
 const listByFilter = combineReducers({
   all: createPostList('all')
 })
