@@ -25,4 +25,3 @@ export const postsById = (state=[], action) => {
 };
 
 export const getPostById = (state, id) => state[id];
-

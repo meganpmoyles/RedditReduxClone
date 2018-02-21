@@ -50,4 +50,11 @@ export const removePost = (id) => (dispatch) => {
   });
 };
 
-
+export const fetchCategory = () = (dispatch) => {
+  return Api.getAllCategories().then(function(result) {
+          dispatch({
+            type: 'FETCH_CATEGORIES',
+            result
+          });
+  });
+};
