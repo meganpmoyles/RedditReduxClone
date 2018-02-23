@@ -5,12 +5,12 @@ import VisiblePostList from './VisiblePostList.js'
 import AddPost from './AddPost.js'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Category from './Category'
+import LinkList from './LinkList.js'
 
 const Home = () => (
   <ul>
     <VisiblePostList filter="all"/>
-    <Link to="/category/dashboard">Dashboard</Link>
-    <Route path="/category/:id" component={Category} />
+    <LinkList/>
   </ul>
 )
 

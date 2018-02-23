@@ -1,9 +1,7 @@
-import React from 'react'
-import * as actions from '../actions'
-import PropTypes from 'prop-types'
-import * as API from '../middleware/api.js'
-import { getCurrentCategories } from '../reducers/index.js'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { connect } from 'react-redux'
+import React, { Component} from 'react'
+import Category from '../containers/Category.js'
 
 class Linker extends Component {
   render() {
@@ -11,15 +9,12 @@ class Linker extends Component {
    return (
      <div>
        {links.map((item, index) => (
-         <Link to="/category/dashboard">Dashboard</Link>
-       ));}
+         <Link to="/category/{item}">item</Link>
+       ))}
       <Route path="/category/:id" component={Category} />
      </div>
    )
   }
 }
-Linker = connect(mapStateToProps, null)(LinkList);
+
 export default Linker;
-
-
-
