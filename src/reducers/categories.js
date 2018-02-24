@@ -1,10 +1,14 @@
-export const categoryReducer = (state=[], action) => {
+export const categories = (state=[], action) => {
   switch(action.type) {
     case 'FETCH_CATEGORIES':
-        state["categories"] = action.result.map(category => category.name);
-        return state;
+        return action.result.categories.map(category => category.name);
       default:
         return state;
   }
 };
 
+export const getCurrentCategories = (state) => {
+  return state["categories"];
+}
+
+export default categories;

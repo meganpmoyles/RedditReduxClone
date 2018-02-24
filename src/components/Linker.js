@@ -8,13 +8,18 @@ class Linker extends Component {
    const { links } = this.props;
    return (
      <div>
-       {links.map((item, index) => (
-         <Link to="/category/{item}">item</Link>
+     Categories
+     {(links == null || links.length == 0) ? "No Links" : links.map((item, index) => (
+        <ul>
+         <Link to={"/category/"+item}>{item}</Link>
+        </ul>
        ))}
       <Route path="/category/:id" component={Category} />
      </div>
    )
   }
 }
+       /*{
+       */
 
 export default Linker;

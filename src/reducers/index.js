@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 import  { postsById, getPostById } from './byId.js'
-import { categoryReducer } from './categories.js'
+import categories from './categories.js'
 import createPostList, * as fromList from './createList.js'
 
 const listByFilter = combineReducers({
@@ -10,7 +10,7 @@ const listByFilter = combineReducers({
 const rootReducer = combineReducers({
   postsById,
   listByFilter,
-  categoryReducer
+  categories
 })
 
 export const getVisiblePosts = (state, filter) => {
@@ -26,8 +26,5 @@ export const getVisiblePosts = (state, filter) => {
         return collectedPosts;
 }
 
-export const getCurrentCategories = (state) => {
-  return state["categories"];
-}
 
 export default rootReducer

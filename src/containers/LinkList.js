@@ -2,20 +2,25 @@ import React, { Component} from 'react'
 import * as actions from '../actions'
 import PropTypes from 'prop-types'
 import * as API from '../middleware/api.js'
-import { getCurrentCategories } from '../reducers/index.js'
+import { getCurrentCategories } from '../reducers/categories.js'
 import { connect } from 'react-redux'
 import Linker from '../components/Linker.js'
 import {BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class LinkList extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   componentDidMount(){
-    const { fetchCategories } = this.props;
-    fetchCategories();
+    const { fetchCategory } = this.props;
+    fetchCategory();
   }
 
   render() {
+    const { categories } = this.props;
     return (
-      <Linker links={this.props.categories}/>
+      <Linker links={categories}/>
     )
   }
 }
@@ -26,5 +31,5 @@ const mapStateToProps = state => {
   }
 };
 
-LinkList = connect(mapStateToProps, actions)(Linker);
+LinkList = connect(mapStateToProps, actions)(LinkList);
 export default LinkList;

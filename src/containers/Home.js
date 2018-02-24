@@ -9,8 +9,8 @@ import LinkList from './LinkList.js'
 
 const Home = () => (
   <ul>
-    <VisiblePostList filter="all"/>
     <LinkList/>
+    <VisiblePostList/>
   </ul>
 )
 
