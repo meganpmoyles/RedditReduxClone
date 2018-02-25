@@ -2,7 +2,7 @@ import * as Api from '../middleware/api.js'
 const uuid = require('uuid')
 
 export const fetchPosts = (filter) => (dispatch) => {
-  if(filter == "all"){
+  if(filter == undefined || filter == "all"){
     return Api.getAllPosts(filter).then(function(result) {
           dispatch({
             type: 'FETCH_POSTS_SUCCESS',
