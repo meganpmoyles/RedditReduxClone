@@ -3,12 +3,19 @@ const serverUrl = 'http://localhost:3001'
 const API_ID = "test_api"
 const header = { headers: { 'Authorization': API_ID }}
 
-export const getAllPosts = () =>
+export const getAllPosts = (filter) =>
          fetch(`${serverUrl}/posts`, header).
          then(function(res) {
            var retVal = res.json();
            return retVal;
-         })
+         });
+
+export const getCategoryPosts = (filter) => 
+         fetch(`${serverUrl}/${filter}/posts`, header).
+         then(function(res) {
+           var retVal = res.json();
+           return retVal;
+         });
 
 export const getPostById = (id) =>
   fetch(`${serverUrl}/posts/${id}`, header).

@@ -2,7 +2,16 @@ import * as Api from '../middleware/api.js'
 const uuid = require('uuid')
 
 export const fetchPosts = (filter) => (dispatch) => {
-  return Api.getAllPosts().then(function(result) {
+  if(filter == undefined || filter == "all"){
+    return Api.getAllPosts(filter).then(function(result) {
+          dispatch({
+            type: 'FETCH_POSTS_SUCCESS',
+            filter,
+            result
+          });
+    });
+  }
+  return Api.getCategoryPosts(filter).then(function(result) {
           dispatch({
             type: 'FETCH_POSTS_SUCCESS',
             filter,
@@ -41,4 +50,11 @@ export const removePost = (id) => (dispatch) => {
   });
 };
 
-
+export const fetchCategory = () => (dispatch) => {
+  return Api.getAllCategories().then(function(result) {
+          dispatch({
+            type: 'FETCH_CATEGORIES',
+            result
+          });
+  });
+};
