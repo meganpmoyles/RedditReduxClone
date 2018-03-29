@@ -19,7 +19,5 @@ class Linker extends Component {
    )
   }
 }
-       /*{
-       */
 
 export default Linker;

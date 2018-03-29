@@ -1,4 +1,4 @@
-import React, { Component} from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import * as actions from '../actions'
 import PostList from '../components/PostList.js'
@@ -8,7 +8,7 @@ import {createPost}  from '../middleware/api.js'
 
 class VisiblePostList extends Component {
         componentDidMount(){
-          const { fetchPosts, addPost, votePost, filter } = this.props;
+          const { fetchPosts, addPost, votePost, filter, sortOrder } = this.props;
           fetchPosts(filter);
         }
 
@@ -16,6 +16,9 @@ class VisiblePostList extends Component {
           const { posts } = this.props;
           return (
             <div>
+              <h1>
+              {this.props.sortOrder}
+              </h1>
               <h1>
               {this.props.filter}
               </h1>
@@ -28,9 +31,9 @@ class VisiblePostList extends Component {
         }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, props) => {
   return {
-    posts: getVisiblePosts(state, "all")
+    posts: getVisiblePosts(state, "all", props.sortOrder)
   }
 };
 
